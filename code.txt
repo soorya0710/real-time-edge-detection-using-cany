@@ -1,0 +1,17 @@
+clc
+clear all
+close all
+warning off
+c=webcam;
+while true
+x=c.snapshot;
+imshow(x);
+a=rgb2gray(x);
+subplot(1,2,1);
+imshow(x);
+title('Original Image');
+w=edge(a,'canny');
+subplot(1,2,2);
+imshow(w);
+title('Canny Operation');
+end
